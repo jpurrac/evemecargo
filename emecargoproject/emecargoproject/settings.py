@@ -25,8 +25,14 @@ SECRET_KEY = '6ih$q0uqsm^ej7scn_+k+)+c76b!0zi5i2id_a1$^k!ujy1*%5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #True cuando se esta desarrollando / False cuando se va a subir la app
 
-ALLOWED_HOSTS = [] #[*] para subir la apgina tambien dento de las configuraciones
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "farobelenccp@gmail.com"
+EMAIL_HOST_PASSWORD = 'farobelen382'
+EMAIL_PORT = '587'
 
+ALLOWED_HOSTS = [] #[*] para subir la apgina tambien dento de las configuraciones
 
 # Application definition
 #modulos, trabajan de forma separada / separa la logica entre modulos para ser menos engorroso el codigo
@@ -38,6 +44,10 @@ INSTALLED_APPS = [ #aqui se instalaran las app's que se crearan en nuetro proyec
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'paginapp',
+    'pedidos',
+    'inventario',
+    'orden',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -100,13 +110,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#configuracion del CKEditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -119,3 +135,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+#https://www.youtube.com/watch?v=KqDYIAEAfpw&list=PLMbRqrU_kvbTGg_oUKXyWi63Mo9Yoot9K&index=28
+STATICFILES_DIRS = (os.path.join(BASE_DIR), 'static') #donde se buscarán los archivos estaticos
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = (os.path.join(BASE_DIR), 'media')

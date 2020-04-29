@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block carrusel %} <!-- Para que no salga el carrusel en esta parte-->
+{% endblock carrusel %}
+
+{% block historia %}
+<div class="container">
+    <div class="titulo text-center py-4">
+        <p>Nuestra Historia</p>
+    </div>
+    <div class="row ">
+        <div class="card mb-3 col-12">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                <img src="{% static 'img/h1.jpg' %}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body ">
+                        <div class="card-text text-center text-justify historia">
+                           <p>Con mas de 40 años en el rubro, restorán Faro Belén es parte de los destinos gastroonómicos tradicionales de la ciudad de Concepcion.
+
+                              Somos especialistas en gastronomía marina y nuestra carta ofrece los platos mas tradicionales del sur de Chile.
+                           </p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card mb-3 col-12">
+            <div class="row no-gutters">
+              <div class="col-md-8">
+                <div class="card-body">
+                    <div class="card-text text-center text-justify historia">
+                        <p>
+                            Nuestra historia se remonta a fines de la década de los 70's. Faro belén fue fundado por Hermanas Carrasco con el sueño de brindar  un abmiente cómodo y agradable a sus fieles clientes. Contamos con espacios habilitados para personas con necesidades especiales, adulto mayor y sobre todo, para toda la familia.
+                        </p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <img src="{% static 'img/h2.png' %}" class="card-img" alt="...">
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="card mb-3 col-12">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{% static 'img/0007.jpg' %}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <div class="card-text historia text-center text-justify historias">
+                            <p>
+                                Lo invitamos a degustar nuestra carta única, simple y tradicional desarrollada a lo largo de años. Deléitese con los sabores y sensaciones que solo la experiencia y el amor por la tradición culinaria familiar pueden ofrecer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+{% endblock historia %}
+{% block modal %}
+{% endblock modal %}
+{% block modalinicio %}
+{% endblock modalinicio %}

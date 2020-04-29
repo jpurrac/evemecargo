@@ -1,0 +1,75 @@
+{% extends 'index.html' %}
+
+{% block carrusel %} <!-- Para que no salga el carrusel en esta parte-->
+{% endblock carrusel %}
+
+{% block contacto %}
+<section>
+    <div class="container">
+        <div class="col-12 text-center py-3 titulo">
+            <p>	Contáctanos</p>
+        </div>
+        <div>
+            <p class="text-center text-justify lead">Necesitas comunicarte con nosotros? Déjanos tus datos a través de nuestro formulario y nos comunicaremos contigo a la brevedad. </p>
+        </div>
+        <div class="formulario">
+            <div class="container">
+                <div class="row mt-3 pb-5">
+                    <div class="col-12 col-md-8 offset-md-2 py-3 rounded px-5">
+                        <form method="POST">
+                            {% csrf_token %}
+                           <!-- <input type="text" name="nombre" id="">
+                            <input type="text" name="apellido" id="">
+                            <input type="number" name="telefono" id="">
+                            <input type="email" name="correo" id="">
+                            <input type="text" name="asunto" id="">
+                            <input type="text" name="mensaje" id="">
+                            <button type="submit">Crear</button> -->
+                           <div class="form-group">
+                                <label>Nombres</label>
+                                <input type="text" name="nombre" class="form-control shadow-sm" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Apellidos</label>
+                                <input type="text" name="apellido" class="form-control shadow-sm" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Número Telefónico</label>
+                                <input type="number" name="telefono" class="form-control shadow-sm" placeholder= "9 87654321" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="email" name="correo" class="form-control shadow-sm" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Asunto</label>
+                                <select name="asunto" class="form-control shadow-sm">
+                                    <option value="0">Seleccione Asunto</option>
+                                    {% for sp in spinner %}
+                                        <option value="{{ sp.id }}">{{ sp.asunto }}</option>
+                                    {% endfor %}
+                                </select>    
+                            </div>
+                            <div class="form-group">
+                                <label>Mensaje</label>
+                                <textarea name="mensaje" id="" cols="30" rows="10" class="form-control shadow-sm" required></textarea>
+                            </div> 
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-secondary btn-block">
+                                    <a class="far fa-envelope send-envelope"></a>
+                                    Enviar</button>
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock contacto %}
+
+{% block modal %}
+{% endblock modal %}
+{% block modalinicio %}
+{% endblock modalinicio %}

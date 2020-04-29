@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block carrusel %}
+{% endblock carrusel %}
+{% block paginas %}
+
+
+<body>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-2">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-portada-tab" data-toggle="pill" href="#v-pills-portada" role="tab" aria-controls="v-pills-portada" aria-selected="true">Portada</a>
+                <a class="nav-link" id="v-pills-presentacion-tab" data-toggle="pill" href="#v-pills-presentacion" role="tab" aria-controls="v-pills-presentacion" aria-selected="false">Presentación</a>
+                <a class="nav-link" id="v-pills-1pagina-tab" data-toggle="pill" href="#v-pills-1pagina" role="tab" aria-controls="v-pills-1pagina" aria-selected="false">1ra Página</a>
+                <a class="nav-link" id="v-pills-2pagina-tab" data-toggle="pill" href="#v-pills-2pagina" role="tab" aria-controls="v-pills-2pagina" aria-selected="false">2 Página</a>
+                <a class="nav-link" id="v-pills-consideraciones-tab" data-toggle="pill" href="#v-pills-consideraciones" role="tab" aria-controls="v-pills-consideraciones" aria-selected="false">Consideraciones</a>
+              </div>
+            </div>
+            <div class="col-10">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div data-toggle="modal" data-target="#Modalimg" class="tab-pane fade show active" id="v-pills-portada" role="tabpanel" aria-labelledby="v-pills-portada-tab">
+                    <img src="{% static 'img/menu1.png' %}" class="popimg" width="100%">
+                </div>
+                <div data-toggle="modal" data-target="#Modalimg" class="tab-pane fade" id="v-pills-presentacion" role="tabpanel" aria-labelledby="v-pills-presentacion-tab">
+                    <img src="{% static 'img/menu2.png' %}" class="popimg" width="100%">
+                </div>
+                <div data-toggle="modal" data-target="#Modalimg" class="tab-pane fade" id="v-pills-1pagina" role="tabpanel" aria-labelledby="v-pills-1pagina-tab">
+                    <img src="{% static 'img/menu3.png' %}" class="popimg" width="100%">
+                </div>
+                <div data-toggle="modal" data-target="#Modalimg" class="tab-pane fade" id="v-pills-2pagina" role="tabpanel" aria-labelledby="v-pills-2pagina-tab">
+                    <img src="{% static 'img/menu4.png' %}" class="popimg" width="100%">
+                </div>
+                <div data-toggle="modal" data-target="#Modalimg" class="tab-pane fade" id="v-pills-consideraciones" role="tabpanel" aria-labelledby="v-pills-consideraciones">
+                    <img src="{% static 'img/menu5.png' %}" class="popimg" width="100%">
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <!-- Modal -->
+        <div id="Modalimg" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered modal-xl" >
+                <div class="modal-content">
+                        <img alt="..." style="width: 100%; height: 100%;">
+                        <!--
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cerrar</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block modal %}
+    {% endblock modal %}
+    {% block modalinicio %}
+    {% endblock modalinicio %}
+    <!-- ###################################SCRIPTS#############################################################################-->
+    <script>
+        //var $ = jQuery.noConflict();
+        $(document).ready(function(){ //que cuando la pagina inicie, automaticamente se ejecutara esta funcion
+            
+            $('.popimg').click(function(event){ //al hacer click en '.popimg'(imagen)
+                event.preventDefault(); //esto evita que se ejecute el lick
+                $('.modal img').attr('src', $(this).attr('src'));
+                $('.modal').modal('show');
+            });
+    
+    
+        });
+    </script>
+
+
+</body>
+</html>
+
+{% endblock paginas %}

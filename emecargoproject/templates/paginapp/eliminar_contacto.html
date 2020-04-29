@@ -1,0 +1,7 @@
+<form method="POST"> <!-- Se manda un POST para eliminar -->
+    {% csrf_token %}
+    <h2>¿Desea eliminar el registro de {{contacto.nombre }} {{ contacto.apellido }} ?</h2>
+    <button type="submit">Si, Eliminar</button>
+    <a href="{% url 'paginapp:listar_contacto' %}">Cancelar</a>
+</form>
+

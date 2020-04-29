@@ -1,0 +1,65 @@
+header .container{
+    background: url("../img/header.png");
+    height: 189px;
+}
+
+body {
+    background: url("../img/takahiro-taguchi-dPCf1rzKx60-unsplash.jpg") fixed center no-repeat;
+}
+nav .container #index {
+    color: white;
+    background-color: #952008;
+}
+
+footer .container{
+    color: white;
+    background-color: #952008;
+}
+
+li {
+    text-decoration: none;
+    color: white;
+    font-weight: lighter;
+    font-size: 28px;
+    padding: 0 20px;
+}
+
+.cool::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+
+.cool:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+section .container .card-body {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.container .row .card-body .historia {
+    font-family: 'Overlock', cursive;
+    font-size: 25px;
+    margin-top: 30px;
+
+}
+
+.container .row .card-body .historias {
+    font-family: 'Overlock', cursive;
+    font-size: 25px;
+    margin-top: 85px;
+
+}
+/* ##### TITULOS HISTORIA - IMAGENES - CONTACTO #####*/
+body .container .titulo{
+    font-family: 'Parisienne', cursive;
+    /* font-family: 'Parisienne', cursive; */
+    font-size: 100px;
+
+}

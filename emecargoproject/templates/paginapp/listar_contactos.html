@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Fecha Recibo</th>
+                <th>Correo</th>
+                <th>Asunto</th>
+                <th>Mensaje</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ctto in contacto %}
+            <tr>
+                <td>{{ ctto.id }}</td>
+                <td>{{ ctto.nombre }}</td>
+                <td>{{ ctto.apellido }}</td>
+                <td>{{ ctto.telefono }}</td>
+                <td>{{ ctto.fechacontacto|date:"M d, Y" }}</td>
+                <td>{{ ctto.correo }}</td>
+                <td>{{ ctto.asunto }}</td>
+                <td>{{ ctto.mensaje }}</td>
+                <td><a href="{% url 'paginapp:editar_contacto' ctto.id %}">Editar</a>
+                    <a href="{% url 'paginapp:eliminar_contacto' ctto.id %}">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

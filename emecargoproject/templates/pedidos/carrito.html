@@ -1,0 +1,36 @@
+
+{% extends 'index.html' %}
+
+{% block carrusel %}
+{% endblock %}
+
+
+
+{% block navbar %}
+<nav class="navbar navbar-expand-sm sticky-top navbar-light " style="background-color: #952008;" data-toggle="affix">
+  <div class="container" id="index">
+      <div class="navbar-collapse collapse text-center" id="navbar">
+          <ul class="navbar-nav mx-auto d-sm-flex d-block flex-sm-nowrap" id="continicio">
+            <li>
+              <a style ="color: white;" id="inicio" class="lead cool" >Estimad@ {{ nombre }} {{ apellido }}, eliga sus productos</a>
+            </li>
+          </ul>
+      </div>
+      
+      <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+</nav>
+{% endblock navbar %}
+
+  {% if vacio %}
+  <div>
+    <p>{{ mensaje_vacio }}</p>
+  </div>
+  {% endif %}
+
+
+
+
+

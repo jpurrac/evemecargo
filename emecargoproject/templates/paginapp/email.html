@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">
+                    <h1>Formulario de Contacto</h1>
+                </td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                 <th>Cliente: </th>
+                 <td> {{ nombre }} {{ apellido }}</td>
+            </tr>
+            <tr>
+                 <th>Teléfono: </th>
+                 <td> {{ telefono }}</td>
+             </tr>
+             <tr>
+                 <th>E-mail: </th>
+                 <td> {{ ecorreo }}</td>
+             </tr>
+             <tr>
+                 <th>Asunto: </th>
+                 <td> {{ asunto.asunto }}</td>
+             </tr>
+             <tr>
+                 <th>Mensaje: </th>
+                 <td> {{ mensaje }}</td>
+             </tr>
+        </tbody>
+        <tfoot>
+            
+        </tfoot>
+    </table> 
+</body>
+</html>
